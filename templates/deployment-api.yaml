@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: books-api
+spec:
+  replicas: {{ .Values.api.replicaCount }}
+  selector:
+    matchLabels:
+      app: books-api
+  template:
+    metadata:
+      labels:
+        app: books-api
+    spec:
+      containers:
+        - name: books-api
+          image: "{{ .Values.api.image }}:{{ .Values.api.tag }}"
+          ports:
+            - containerPort: 8080

@@ -17,3 +17,23 @@ spec:
           image: "{{ .Values.api.image }}:{{ .Values.api.tag }}"
           ports:
             - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: books-ui
+spec:
+  replicas: {{ .Values.ui.replicaCount }}
+  selector:
+    matchLabels:
+      app: books-ui
+  template:
+    metadata:
+      labels:
+        app: books-ui
+    spec:
+      containers:
+        - name: books-ui
+          image: "{{ .Values.ui.image }}:{{ .Values.ui.tag }}"
+          ports:
+            - containerPort: 80

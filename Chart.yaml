@@ -1,5 +1,6 @@
 apiVersion: v2
-name: books-chart
-description: A Helm chart for the Book App (API + UI)
+name: books-app
+description: A Helm chart for deploying Book app (API + UI)
+type: application
 version: 0.1.0
 appVersion: "1.0"

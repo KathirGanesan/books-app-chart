@@ -10,7 +10,7 @@ ui:
 
 ingress:
   enabled: true
-  className: nginx
+  ingressClassName: nginx
   host: books.zenflixapp.online
   tls: true
   tlsSecret: books-app-tls
